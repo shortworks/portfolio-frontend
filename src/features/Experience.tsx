@@ -7,7 +7,7 @@ import int_logo from "../assets/work-intel-logo.png"
 export default function Experience() {
     return (
         <div className="mb-10 w-4xl">
-            <h1 className="my-6 text-left  font-header font-medium">Experience</h1>
+            <h1 className="my-6 text-left font-header font-medium">Experience</h1>
             <Card
                 img_url={ss_logo}
                 title="Software Engineer"
