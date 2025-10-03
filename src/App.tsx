@@ -1,13 +1,12 @@
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Navbar from './components/Navbar'
 import HomePage from './pages/HomePage'
 import Resume from "./pages/Resume"
 
 export default function App() {
   return (
     <BrowserRouter>
-        <nav>
-          <Link to="/">Home</Link> | <Link to="/resume">Resume</Link>
-        </nav>
+        <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />}/>
           <Route path="/resume" element={<Resume />}/>

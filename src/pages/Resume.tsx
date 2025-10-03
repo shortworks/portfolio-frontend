@@ -5,11 +5,11 @@ import Skills from '../features/Skills'
 
 export default function Resume() {
   return (
-    <>
-    <ResumeHeader />
-    <Skills />
-    <Experience />
-    <Education />
-    </>
+    <div className="grid place-items-center">
+      <ResumeHeader />
+      <Skills />
+      <Experience />
+      <Education />
+    </div>
   )
 }
