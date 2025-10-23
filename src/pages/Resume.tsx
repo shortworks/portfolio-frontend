@@ -5,7 +5,7 @@ import Skills from '../features/Skills'
 
 export default function Resume() {
   return (
-    <div className="grid place-items-center">
+    <div className="mx-auto my-2 -mt-5 flex flex-grow flex-col items-center justify-between gap-6">
       <ResumeHeader />
       <Skills />
       <Experience />

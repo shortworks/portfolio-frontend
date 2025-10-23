@@ -1,6 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
-@import "tailwindcss";
-@import "tailwindcss/preflight" layer(base);
+@import 'tailwindcss';
+@import 'tailwindcss/preflight' layer(base);
+
+@layer utilities {
+  /* --- Light Mode --- */
+  .bg-surface {
+    @apply bg-slate-100;
+  }
+  .bg-primary {
+    @apply bg-slate-300;
+  }
+  .bg-secondary {
+    @apply bg-slate-400/90;
+  }
+  .bg-accent {
+    @apply bg-orange-500;
+  }
+  .hover\:bg-accent-hover:hover {
+    @apply bg-orange-400;
+  }
+
+  .text-primary {
+    @apply text-slate-900;
+  }
+  .text-secondary {
+    @apply text-slate-600;
+  }
+  .text-accent {
+    @apply text-orange-500;
+  }
+
+  .border-muted {
+    @apply border-slate-300;
+  }
+
+  /* --- Dark Mode --- */
+  .dark .bg-surface {
+    @apply bg-slate-900;
+  }
+  .dark .bg-primary {
+    @apply bg-slate-800;
+  }
+  .dark .bg-accent {
+    @apply bg-orange-400;
+  }
+  .dark .hover\:bg-accent-hover:hover {
+    @apply bg-orange-500;
+  }
+
+  .dark .text-primary {
+    @apply text-slate-100;
+  }
+  .dark .text-secondary {
+    @apply text-slate-300;
+  }
+  .dark .text-accent {
+    @apply text-orange-400;
+  }
+
+  .dark .border-muted {
+    @apply border-slate-600;
+  }
+
+  /* --- Common --- */
+  .text-shadow {
+    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+  }
+  .hover\:text-shadow-hover:hover {
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  nav {
+    @apply bg-slate-300/50 backdrop-blur-md backdrop-filter;
+  }
+}
+
+html {
+  overflow-y: scroll;
+}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -17,60 +94,61 @@
 }
 
 #root {
-  min-height: 100%;
+  /* min-height: 100%; */
   text-align: center;
 }
 
+.font-size-header {
+  @apply text-2xl md:text-3xl lg:text-4xl;
+}
+
+.font-size-card-title {
+  @apply text-sm md:text-base lg:text-lg;
+}
+
+.font-size-body {
+  @apply text-xs md:text-sm lg:text-base;
+}
+
 .card {
-  @apply
-  border-solid rounded-2xl shadow-lg
-  bg-white;
+  @apply rounded-2xl border-solid bg-white shadow-lg;
 }
 
 .card-icon {
-  @apply
-  flex flex-shrink-0
-  w-24 h-24
-  items-center justify-center
+  @apply flex-shrink-0 items-center justify-center;
 }
 
 .logo-color {
-  @apply
-  bg-gradient-to-br
-  from-purple-900 to-blue-700;
+  @apply bg-gradient-to-r from-purple-900 to-blue-700;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .logo-color:active,
 .logo-color:hover {
-  @apply
-  from-blue-500 to-purple-700
+  @apply from-blue-500 to-purple-700;
 }
 
 .link-style:active,
 .link-style:hover {
-  @apply
-  bg-gradient-to-br
-  from-blue-500 to-purple-700;
+  @apply bg-gradient-to-r from-blue-500 to-purple-700;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 @theme {
   --font-header: 'Montserrat', sans-serif;
-  --font-body: "Source Sans 3", sans-serif;
+  --font-body: 'Source Sans 3', sans-serif;
 }
 
 body {
   margin: 0;
   display: flex;
-  min-width: 320px;
   min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
+  /* font-size: 3.2em; */
   line-height: 1.1;
 }
 
