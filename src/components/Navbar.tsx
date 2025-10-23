@@ -1,35 +1,84 @@
-import { Link } from "react-router-dom"
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
+import MenuButton from './MenuButton'
+
+const links = [
+  { to: '/about', label: 'About Me' },
+  { to: '/projects', label: 'Projects' },
+  { to: '/resume', label: 'Resume' },
+  { to: '/contact', label: 'Contact Me' },
+]
 
 export default function Navbar() {
-    return (
-        <nav className="w-full sticky top-0 bg-slate-400 text-black">
-          <div id="nav-container" className="max-w-4xl mx-auto items-center flex py-2">
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  return (
+    <nav className="sticky top-0 z-10 flex w-full justify-center shadow-md md:rounded-b-2xl">
+      <div className="flex w-full grow px-2 py-1 sm:px-4 sm:py-2">
+        <div
+          id="nav-container"
+          className="relative flex grow items-center select-none"
+        >
+          <div className="font-header text-shadow hover:text-shadow-hover text-2xl font-bold">
             <Link to="/">
-              <div className="grid grid-cols-[auto_1fr_auto] grid-rows-2 font-header font-bold text-4xl logo-color transition-colors duration-100 select-none">
-                <div className="row-span-2 place-items-center text-7xl font-medium leading-none">
-                  {"{"}
-                </div>
-                
-                <div className="col-start-2 row-start-1 w-35 pl-1 flex justify-start">
-                  Short
-                </div>
-                
-                <div className="col-start-2 row-start-2 flex pr-1 justify-end">
-                  Works
-                </div>
-                
-                <div className="row-span-2 place-items-center text-7xl font-medium leading-none">
-                  {"}"}
-                </div>
-              </div>
+              <span className="text-accent">{'<'}</span>
+              <span className="text-primary">Short</span>
+              <span className="text-accent">Works</span>
+              <span className="text-primary">{' />'}</span>
             </Link>
-            <div className="flex-1 text-3xl font-header font-bold text-right space-x-6">
-              <Link to="/about" className="link-style select-none">About</Link>
-              <Link to="/projects" className="link-style select-none">Projects</Link>
-              <Link to="/resume" className="link-style select-none">Resume</Link>
-              <Link to="/contact" className="link-style select-none">Contact Me</Link>
-            </div>
           </div>
-        </nav>
-    )
+          <div
+            id="menu-button"
+            className="hover:text-shadow-hover ml-auto flex items-center font-semibold sm:hidden"
+          >
+            <MenuButton
+              open={menuOpen}
+              toggleMenu={() => setMenuOpen(!menuOpen)}
+            />
+          </div>
+
+          <AnimatePresence>
+            {menuOpen && (
+              <motion.div
+                initial={{
+                  height: menuOpen ? 0 : 'auto',
+                  opacity: 0,
+                }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{
+                  duration: 0.1,
+                  ease: 'easeInOut',
+                }}
+                className="bg-secondary absolute top-9 -right-2 z-50 flex flex-col items-end space-y-2 overflow-hidden rounded-bl-md p-2 shadow-lg sm:hidden"
+              >
+                {links.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className="hover:text-shadow-hover font-semibold"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+        <div className="mt-2 hidden sm:mt-0 sm:ml-auto sm:flex sm:flex-row sm:items-center sm:justify-end sm:space-x-4">
+          {links.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="hover:text-shadow-hover font-semibold"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </nav>
+  )
 }

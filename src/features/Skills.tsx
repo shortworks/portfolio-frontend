@@ -1,29 +1,29 @@
 import SkillCard from '../components/SkillCard'
 
 export default function Skills() {
-    return (
-        <div className="mb-10 w-4xl">
-            <h1 className="mt-6 mb-2 text-left  font-header font-medium">Technical Skills</h1>
-            <div className="grid grid-cols-2 gap-x-4">
-                <SkillCard
-                    title="Languages"
-                    text="C, C++, C#, Python, SQL, Assembly"
-                />
-                <SkillCard
-                    title="GUI Frameworks"
-                    text="Qt/QML, C# WPF"
-
-                />
-                <SkillCard
-                    title="Tools and Platforms"
-                    text="Visual Studio, VS Code, Eclipse, Git, Jira, Confluence, Windows, Linux"
-                />
-                <SkillCard
-                    title="Embedded Systems"
-                    text="firmware development, device drivers,
-                        microcontroller architectures (8-32 bit)"
-                />
-            </div>
-        </div>
-    )
+  return (
+    <div className="w-full flex-col px-2">
+      <h1 className="font-header font-size-header text-left">
+        Technical Skills
+      </h1>
+      <div className="mt-1 grid grid-cols-1 gap-2 sm:grid-cols-2">
+        <SkillCard
+          title="Languages"
+          text="C, C++, C#, Python, JavaScript, HTML, CSS, SQL"
+        />
+        <SkillCard
+          title="Frameworks and Libraries"
+          text="React JS, Tailwind CSS, Node.JS, Qt/QML, C# WPF"
+        />
+        <SkillCard
+          title="Tools and Platforms"
+          text="Visual Studio/VS Code, Eclipse, Git, Jira, Confluence, Linux"
+        />
+        <SkillCard
+          title="Embedded Systems"
+          text="Firmware Development, Device Drivers, Microcontroller Architecture"
+        />
+      </div>
+    </div>
+  )
 }
