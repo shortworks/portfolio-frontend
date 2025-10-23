@@ -15,7 +15,6 @@ export default function EntryCard({
   img_url,
   title,
   sm_title,
-  sub_title,
   entity,
   sm_entity,
   location,
