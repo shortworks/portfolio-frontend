@@ -20,7 +20,7 @@ export default function Navbar() {
           id="nav-container"
           className="relative flex grow items-center select-none"
         >
-          <div className="font-header text-shadow hover:text-shadow-hover text-2xl font-bold">
+          <div className="font-header text-shadow hover:text-shadow-hover text-2xl font-bold transition-all">
             <Link to="/">
               <span className="text-accent">{'<'}</span>
               <span className="text-primary">Short</span>
@@ -30,7 +30,7 @@ export default function Navbar() {
           </div>
           <div
             id="menu-button"
-            className="hover:text-shadow-hover ml-auto flex items-center font-semibold sm:hidden"
+            className="hover:text-shadow-hover ml-auto flex items-center font-semibold transition-all sm:hidden"
           >
             <MenuButton
               open={menuOpen}
@@ -72,7 +72,7 @@ export default function Navbar() {
             <Link
               key={link.to}
               to={link.to}
-              className="hover:text-shadow-hover font-semibold"
+              className="hover:text-shadow-hover font-semibold transition-all"
             >
               {link.label}
             </Link>
