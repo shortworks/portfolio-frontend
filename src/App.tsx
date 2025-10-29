@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import HomePage from './pages/HomePage'
 import Resume from './pages/Resume'
 import ContactMe from './pages/ContactMe'
+import AboutMe from './pages/AboutMe'
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <div className="flex flex-grow">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutMe />} />
             <Route path="/resume" element={<Resume />} />
             <Route path="/contact" element={<ContactMe />} />
           </Routes>
