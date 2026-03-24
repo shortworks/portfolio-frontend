@@ -72,7 +72,7 @@ export default function Navbar() {
             <Link
               key={link.to}
               to={link.to}
-              className="hover:text-shadow-hover font-semibold transition-all"
+              className="hover:text-shadow-hover font-header font-semibold transition-all"
             >
               {link.label}
             </Link>

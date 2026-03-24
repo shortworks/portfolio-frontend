@@ -1,65 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Source+Sans+3:wght@200..900&display=swap');
 @import 'tailwindcss';
 @import 'tailwindcss/preflight' layer(base);
+
+@theme {
+  --font-header: 'Montserrat', sans-serif;
+  --font-body: 'Source Sans 3', sans-serif;
+  --breakpoint-xs: 400px;
+}
 
 @layer utilities {
   /* --- Light Mode --- */
   .bg-surface {
-    @apply bg-slate-100;
+    background-color: theme(--color-slate-100);
   }
   .bg-primary {
-    @apply bg-slate-300;
+    background-color: theme(--color-slate-300);
   }
   .bg-secondary {
-    @apply bg-slate-400/90;
+    background-color: theme(--color-slate-400 / 90%);
   }
   .bg-accent {
-    @apply bg-orange-500;
+    background-color: theme(--color-orange-500);
   }
   .hover\:bg-accent-hover:hover {
-    @apply bg-orange-400;
+    background-color: theme(--color-orange-400);
   }
 
   .text-primary {
-    @apply text-slate-900;
+    color: theme(--color-slate-900);
   }
   .text-secondary {
-    @apply text-slate-600;
+    color: theme(--color-slate-600);
   }
   .text-accent {
-    @apply text-orange-500;
+    color: theme(--color-orange-500);
   }
 
   .border-muted {
-    @apply border-slate-300;
+    border-color: theme(--color-slate-300);
   }
 
   /* --- Dark Mode --- */
   .dark .bg-surface {
-    @apply bg-slate-900;
+    background-color: theme(--color-slate-900);
   }
   .dark .bg-primary {
-    @apply bg-slate-800;
+    background-color: theme(--color-slate-800);
+  }
+  .dark .bg-secondary {
+    background-color: theme(--color-slate-700 / 90%);
   }
   .dark .bg-accent {
-    @apply bg-orange-400;
+    background-color: theme(--color-orange-400);
   }
   .dark .hover\:bg-accent-hover:hover {
-    @apply bg-orange-500;
+    background-color: theme(--color-orange-500);
   }
 
   .dark .text-primary {
-    @apply text-slate-100;
+    color: theme(--color-slate-100);
   }
   .dark .text-secondary {
-    @apply text-slate-300;
+    color: theme(--color-slate-300);
   }
   .dark .text-accent {
-    @apply text-orange-400;
+    color: theme(--color-orange-400);
   }
 
   .dark .border-muted {
-    @apply border-slate-600;
+    border-color: theme(--color-slate-600);
   }
 
   /* --- Common --- */
@@ -71,7 +80,9 @@
   }
 
   nav {
-    @apply bg-slate-300/50 backdrop-blur-md backdrop-filter;
+    background-color: theme(--color-slate-300 / 50%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
   }
 }
 
@@ -79,22 +90,18 @@ html {
   overflow-y: scroll;
 }
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  font-family: var(--font-body);
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+h1 {
+  line-height: 1.1;
 }
 
 #root {
-  /* min-height: 100%; */
   text-align: center;
 }
 
@@ -115,49 +122,5 @@ html {
 }
 
 .card-icon {
-  @apply flex-shrink-0 items-center justify-center;
-}
-
-.logo-color {
-  @apply bg-gradient-to-r from-purple-900 to-blue-700;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.logo-color:active,
-.logo-color:hover {
-  @apply from-blue-500 to-purple-700;
-}
-
-.link-style:active,
-.link-style:hover {
-  @apply bg-gradient-to-r from-blue-500 to-purple-700;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-@theme {
-  --font-header: 'Montserrat', sans-serif;
-  --font-body: 'Source Sans 3', sans-serif;
-  --breakpoint-xs: 400px;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  min-height: 100vh;
-}
-
-h1 {
-  line-height: 1.1;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: darkgray;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  @apply flex flex-shrink-0 items-center justify-center;
 }
