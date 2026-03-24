@@ -15,7 +15,7 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-10 flex w-full justify-center shadow-md md:rounded-b-2xl">
-      <div className="flex w-full grow px-2 py-1 sm:px-4 sm:py-2">
+      <div className="flex w-full grow px-4 py-2">
         <div
           id="nav-container"
           className="relative flex grow items-center select-none"
@@ -51,7 +51,7 @@ export default function Navbar() {
                   duration: 0.1,
                   ease: 'easeInOut',
                 }}
-                className="bg-secondary absolute top-9 -right-2 z-50 flex flex-col items-end space-y-2 overflow-hidden rounded-bl-md p-2 shadow-lg sm:hidden"
+                className="bg-secondary absolute top-10 -right-4 z-50 flex flex-col items-end space-y-2 overflow-hidden rounded-bl-md p-4 shadow-lg sm:hidden"
               >
                 {links.map((link) => (
                   <Link
