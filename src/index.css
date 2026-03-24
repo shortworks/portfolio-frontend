@@ -139,6 +139,7 @@ html {
 @theme {
   --font-header: 'Montserrat', sans-serif;
   --font-body: 'Source Sans 3', sans-serif;
+  --breakpoint-xs: 400px;
 }
 
 body {
