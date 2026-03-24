@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import image_sidebar from '../assets/about-me-picture-sidebar.webp'
+import image_letterbox from '../assets/about-me-picture-letterbox.webp'
 
 function AboutImage({
   type = '',
@@ -9,7 +11,7 @@ function AboutImage({
 }) {
   return (
     <img
-      src={`src/assets/about-me-picture-${type}.webp`}
+      src={type}
       alt=""
       className={`rounded-3xl object-cover object-top ${className}`}
     />
@@ -46,11 +48,11 @@ export default function AboutMe() {
       <div className="mt-4 flex flex-col sm:flex-row sm:gap-5">
         {/* Sidebar — wide screens only */}
         <div className="mb-2 hidden gap-3 sm:flex sm:w-1/3 sm:flex-col">
-          <AboutImage type="sidebar" className="h-auto w-full" />
+          <AboutImage type={image_sidebar} className="h-auto w-full" />
           <AboutLinks orientation="col" />
         </div>
         <AboutImage
-          type="letterbox"
+          type={image_letterbox}
           className="xs:mr-4 float-left mr-2 h-auto w-full sm:hidden"
         />
         {/* Text content */}
