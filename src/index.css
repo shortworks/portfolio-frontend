@@ -1,17 +1,30 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Source+Sans+3:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 @import 'tailwindcss';
 @import 'tailwindcss/preflight' layer(base);
 
 @theme {
-  --font-header: 'Montserrat', sans-serif;
-  --font-body: 'Source Sans 3', sans-serif;
+  --primary-light: #e8e0c8;
+  --primary-dark: #1a1a2e;
+  --primary-accent: #e07020;
+  --surface-nav: #c8c0a8;
+  --background-mid: #4a4a6a;
+  --card-surface-light: #f0e8d0;
+  --font-pixel: 'Press Start 2P', sans-serif;
+  --font-body: 'Share Tech Mono', sans-serif;
   --breakpoint-xs: 400px;
+  --page-background: #e8e0c8;
+  --card-surface: #f0e8d0;
+  --nav-background: #c8c0a8;
+  --box-shadow-offset: #b0a890;
+  --box-shadow-offset-opaque: #b0a89090;
+  --border-color: #8a8070;
 }
 
 @layer utilities {
   /* --- Light Mode --- */
   .bg-surface {
-    background-color: theme(--color-slate-100);
+    background-color: theme(--primary-light);
   }
   .bg-primary {
     background-color: theme(--color-slate-300);
@@ -22,8 +35,15 @@
   .bg-accent {
     background-color: theme(--color-orange-500);
   }
+  .bg-nav {
+    background-color: theme(--surface-nav);
+  }
   .hover\:bg-accent-hover:hover {
     background-color: theme(--color-orange-400);
+  }
+
+  .color-accent {
+    color: theme(--primary-accent);
   }
 
   .text-primary {
@@ -33,6 +53,9 @@
     color: theme(--color-slate-600);
   }
   .text-accent {
+    color: theme(--color-orange-500);
+  }
+  .hover\:text-accent-hover:hover {
     color: theme(--color-orange-500);
   }
 
@@ -71,18 +94,14 @@
     border-color: theme(--color-slate-600);
   }
 
-  /* --- Common --- */
-  .text-shadow {
-    text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
-  }
-  .hover\:text-shadow-hover:hover {
-    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-
   nav {
-    background-color: theme(--color-slate-300 / 50%);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background-color: theme(--surface-nav);
+    font-family: theme(--font-pixel);
+    position: sticky;
+    top: 0;
+    border-bottom: theme(--primary-dark);
+    box-shadow: 0px 2px theme(--background-mid);
+    z-index: 100;
   }
 }
 
@@ -105,6 +124,62 @@ h1 {
   text-align: center;
 }
 
+.pill-hw {
+  background: #1a1a2e;
+  color: #e8d0a8;
+  border-color: #e07020;
+  border-width: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  box-shadow: 2px 2px 0 #a05010;
+}
+.pill-sw {
+  background: #1a2a1a;
+  color: #a0e0a0;
+  border-color: #2a8a30;
+  border-width: 2px;
+  padding: 0 4px;
+  box-shadow: 2px 2px 0 #1a4a20;
+}
+.pill-frameworks {
+  background: #1a1a3a;
+  color: #a0b0f0;
+  border-color: #2a4a9a;
+  border-width: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  box-shadow: 2px 2px 0 #0a1a5a;
+}
+.pill-tool {
+  background: #2a1a2a;
+  color: #d0a0e0;
+  border-color: #6a3a8a;
+  border-width: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  box-shadow: 2px 2px 0 #3a1a5a;
+}
+
+.pill-misc {
+  background: #2a1a08;
+  color: #f0c070;
+  border-color: #c8800a;
+  border-width: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  box-shadow: 2px 2px 0 #7a4a05;
+}
+
+.date-card {
+  border-style: solid;
+  border-width: 2px;
+  border-color: theme(--primary-accent);
+  box-shadow: 3px 3px theme(--box-shadow-offset);
+  padding: 3px 7px;
+  color: theme(--primary-accent);
+  background: theme(--primary-dark);
+}
+
 .font-size-header {
   @apply text-2xl md:text-3xl lg:text-4xl;
 }
@@ -118,9 +193,40 @@ h1 {
 }
 
 .card {
-  @apply rounded-2xl border-solid bg-white shadow-lg;
+  border-style: solid;
+  border-width: 4px;
+  background-color: theme(--card-surface-light);
+  border-color: theme(--primary-dark);
+  box-shadow: 6px 6px theme(--box-shadow-offset);
 }
 
-.card-icon {
-  @apply flex flex-shrink-0 items-center justify-center;
+.card:hover {
+  scale: 1.01;
+}
+
+.card-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+hr {
+  border-top: 3px dashed theme(--background-mid);
+  margin: 12px 0;
+}
+
+.hamburger-card {
+  background: theme(--surface-nav);
+  border-style: solid;
+  border-width: 3px;
+  box-shadow: 6px 6px theme(--box-shadow-offset-opaque);
+}
+
+.border-orange-top {
+  border-top: 3px solid theme(--primary-accent);
+}
+
+.border-black-left {
+  border-left: 3px solid theme(--primary-dark);
 }

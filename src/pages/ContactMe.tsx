@@ -5,7 +5,7 @@ import type { IconType } from 'react-icons'
 export default function ContactMe() {
   return (
     <section className="font-body mx-auto space-y-8 px-8 py-12 text-center sm:py-24">
-      <h1 className="font-header text-4xl font-bold">Contact Me</h1>
+      <h1 className="font-pixel text-4xl font-bold">Contact Me</h1>
       <p className="text-secondary">
         Have a project in mind, or just want to connect? Feel free to reach out
         using any of the methods below.

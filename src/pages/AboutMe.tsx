@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import image_sidebar from '../assets/about-me-picture-sidebar.webp'
-import image_letterbox from '../assets/about-me-picture-letterbox.webp'
+import image_sidebar from '../resources/about-me-picture-sidebar.webp'
+import image_letterbox from '../resources/about-me-picture-letterbox.webp'
 
 function AboutImage({
   type = '',
@@ -44,7 +44,7 @@ function AboutLinks({
 export default function AboutMe() {
   return (
     <div className="text-primary m-4 mt-5 leading-relaxed">
-      <h2 className="font-header font-size-header text-left">About Me</h2>
+      <h2 className="font-pixel font-size-header text-left">About Me</h2>
       <div className="mt-4 flex flex-col sm:flex-row sm:gap-5">
         {/* Sidebar — wide screens only */}
         <div className="mb-2 hidden gap-3 sm:flex sm:w-1/3 sm:flex-col">

@@ -1,50 +1,40 @@
-import Card from '../components/EntryCard'
-import ss_logo from '../assets/work-sawstop-logo.png'
-import tc_logo from '../assets/work-transcat-logo.png'
-import omsi_logo from '../assets/work-omsi-logo.png'
-import int_logo from '../assets/work-intel-logo.png'
+import EntryCard from '../components/EntryCard'
+import type { SkillsData } from '../components/EntryCard'
+import quests from '../resources/quest-data.json'
 
 export default function Experience() {
   return (
-    <div className="w-full px-2">
-      <h1 className="font-header font-size-header text-left">Experience</h1>
-      <div className="mt-1 flex flex-col justify-center gap-2">
-        <Card
-          img_url={ss_logo}
-          title="Software Engineer"
-          entity="SawStop LLC"
-          location="Portland, OR"
-          start_date="Jul 2022"
-          end_date="Aug 2025"
-          bullets={[]}
-        />
-        <Card
-          img_url={tc_logo}
-          title="Calibration Technician II"
-          entity="Transcat, Inc."
-          location="Portland, OR"
-          start_date="May 2019"
-          end_date="Mar 2020"
-          bullets={[]}
-        />
-        <Card
-          img_url={omsi_logo}
-          title="Technical and Digital Fabricator"
-          entity="OMSI"
-          location="Portland, OR"
-          start_date="Aug 2018"
-          end_date="May 2019"
-          bullets={[]}
-        />
-        <Card
-          img_url={int_logo}
-          title="Calibration Technician"
-          entity="Intel Corporation"
-          location="Hillsboro, OR"
-          start_date="Sept 2014"
-          end_date="Aug 2018"
-          bullets={[]}
-        />
+    <div className="w-full">
+      <div className="items-left mr-4 flex flex-col pb-3 text-left text-lg font-semibold sm:mr-0 sm:flex-row sm:items-center sm:justify-between">
+        <h2>
+          <span className="color-accent">&#9654;</span>
+          <span className="font-body pl-2">Quest Log</span>
+        </h2>
+        <div className="flex gap-2 text-[0.5em] sm:text-sm md:justify-evenly">
+          <span className="pill-hw">Hardware</span>
+          <span className="pill-sw">Software</span>
+          <span className="pill-frameworks">Frameworks</span>
+          <span className="pill-tool">Tools</span>
+          <span className="pill-misc">Misc.</span>
+        </div>
+      </div>
+      <div className="border-orange-top pt-4">
+        <div className="border-black-left ml-4 pl-4">
+          <div className="mt-1 mr-4 flex flex-col justify-center gap-6">
+            {quests.map((job) => (
+              <EntryCard
+                key={job.id}
+                title={job.position}
+                entity={job.company}
+                location={job.location}
+                start_date={job.startDate}
+                end_date={job.endDate}
+                skills={job.skills as SkillsData}
+                bullets={[]}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )

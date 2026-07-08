@@ -10,7 +10,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <div className="mx-auto max-w-3xl flex-col p-4 pb-0 md:max-w-4xl">
+      <div className="mx-auto max-w-3xl flex-col p-4 md:max-w-4xl">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutMe />} />

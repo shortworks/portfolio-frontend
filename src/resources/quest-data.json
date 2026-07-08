@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "company": "SawStop LLC",
+    "position": "Software Engineer",
+    "location": "Portland, OR",
+    "startDate": "07/2022",
+    "endDate": "08/2025",
+    "current": true,
+    "description": "",
+    "skills": {
+      "hardware": ["C", "Firmware Dev", "Device Drivers", "MCU Architectures"],
+      "software": ["Python", "JavaScript", "SQL"],
+      "frameworks": ["Qt/QML"],
+      "tools": ["Visual Studio", "Eclipse", "Git", "Jira", "Confluence"],
+      "misc": ["Code Reviews", "Technical Documentation", "Unit Testing"]
+    }
+  },
+  {
+    "id": 2,
+    "company": "Transcat, Inc.",
+    "position": "Calibration Technician II",
+    "location": "Portland, OR",
+    "startDate": "05/2019",
+    "endDate": "03/2020",
+    "current": false,
+    "description": "",
+    "skills": {
+      "misc": [
+        "Test Equipment",
+        "Measurement Uncertainty",
+        "Calibration",
+        "Fixture Design"
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "company": "OMSI",
+    "position": "Technical and Digital Fabricator",
+    "location": "Portland, OR",
+    "startDate": "08/2018",
+    "endDate": "05/2019",
+    "current": false,
+    "description": "",
+    "skills": {
+      "hardware": ["Arduino", "PCBA Rework"],
+      "misc": ["Cable Management"]
+    }
+  },
+  {
+    "id": 4,
+    "company": "Intel Corporation",
+    "position": "Calibration Technician",
+    "location": "Hillsboro, OR",
+    "startDate": "09/2014",
+    "endDate": "08/2018",
+    "current": false,
+    "description": "",
+    "skills": {
+      "hardware": ["Raspberry Pi", "OCR"],
+      "software": ["C#", "Fluke MET/CAL"],
+      "frameworks": [".NET", "WPF"],
+      "misc": ["Test Equipment", "Measurement Uncertainty", "Calibration"]
+    }
+  }
+]

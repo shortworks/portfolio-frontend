@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "school": "Portland State University",
+    "degree": "BS in Computer Engineering",
+    "minor": "Mathematics",
+    "startDate": "2018-09",
+    "endDate": "2022-03",
+    "location": "Portland, OR"
+  },
+  {
+    "id": 2,
+    "school": "Portland Community College",
+    "degree": "AAS in Electronic Engineering Tech.",
+    "minor": "",
+    "endDate": "2011-09",
+    "location": "Portland, OR"
+  }
+]
